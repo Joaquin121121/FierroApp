@@ -1,0 +1,180 @@
+body {
+    font-family: "Poppins";
+}
+
+.container {
+    height: 300px;
+    width: 100%;
+    border-style: dotted;
+    margin: auto;
+    text-align: center;
+}
+.container-1{
+    height: 150px;
+    width: 100%;
+    display: flex;
+    border-style: dotted;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+
+.icono-principal{
+    border-style: dotted;
+    width: 125px;
+    margin: 0px 50px;
+    border-radius: 75px;
+    overflow: hidden;
+}
+
+
+.container-1-2 {
+    border-style: dotted;
+    width: 60%;
+    height: 100%;
+}
+
+.container-1-2-1 {
+    height: 40%;
+    border-style: dotted;
+}
+
+.container-1-2-2 {
+    border-style: dotted;
+    height: 60%;
+    display: flex;
+}
+
+.container-1-2-2-1 {
+    display: flex;
+    width: 30%;
+    border-style: dotted;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-1-2-2-1 .icon {
+    display: flex;
+    background-color: #198038;
+    width: 55px;
+    height: 55px;
+    border-style: dotted;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.container-1-2-2-2 {
+    width: 70%;
+    border-style: dotted;
+}
+
+.container-1-2-2-2-1 {
+    display: flex;
+    height: 60%;
+    width: 100%;
+    border-style: dotted;
+}
+
+.container-1-2-2-2-1-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 30%;
+    border-style: dotted;
+}
+
+.container-1-2-2-2-1-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 70%;
+    border-style: dotted;
+}
+
+.container-1-2-2-2-1-1 p{
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.container-1-2-2-2-1-2 p{
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.container-1-2-2-2-2 {
+    border-style: dotted;
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-2{
+    height: 150px;
+    width: 100%;
+    border-style: dotted;
+}
+
+.container-2-1 {
+    border-style: dotted;
+    height: 80%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-2-2 {
+    border-style: dotted;
+    height: 30%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+.progreso{
+    width: 90%;
+    height: 15px;
+    border-style: solid;
+    background-color: #198038;
+    border-radius: 50px;
+}
+
+.vector {
+    height: 70%;
+    width: 70%;
+}
+
+
+
+
+
+
+.p1 {
+    font-size: 28px;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 500;
+}

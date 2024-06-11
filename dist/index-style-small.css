@@ -1,0 +1,262 @@
+body {
+    font-family: "Poppins";
+}
+
+.container {
+    height: 300px;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.container-1{
+    height: 150px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.container-1-1{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icono-principal{
+    width: 75px;
+    height: 75px;
+    border-radius: 75px;
+    overflow: hidden;
+}
+
+
+.container-1-2 {
+    width: 70%;
+    height: 100%;
+}
+
+.container-1-2-1 {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    height: 30%;
+    margin-left: 35lpx;
+}
+
+.container-1-2-2 {
+    height: 70%;
+    display: flex;
+    border-radius: 50px;
+}
+
+.container-1-2-2-1 {
+    padding-top: 20px;
+    display: flex;
+    width: 15%;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.container-1-2-2-1 .icon {
+    display: flex;
+    background-color: #198038;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.container-1-2-2-2 {
+    width: 85%;
+}
+
+.container-1-2-2-2-1 {
+    padding-left: 10px;
+    display: flex;
+    height: 40%;
+    width: 100%;
+}
+.container-1-2-2-2-2 {
+    display: flex;
+    align-items: flex-start;
+    height: 60%;
+}
+
+.container-1-2-2-2-1-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 30%;
+}
+
+.container-1-2-2-2-1-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 70%;
+}
+
+.container-1-2-2-2-1-1 p{
+    font-size: 24px;
+    font-weight: 600;
+}
+
+
+.container-1-2-2-2-2 {
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.container-2{
+    height: 150px;
+    width: 100%;
+}
+
+.container-2-1 {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-2-2 {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.progreso{
+    width: 90%;
+    height: 10px;
+    border-style: solid;
+    background-color: #198038;
+    border-radius: 50px;
+}
+
+.vector {
+    height: 70%;
+    width: 70%;
+}
+
+
+.container-ejercicio {
+    display: flex;
+    width: 95%;
+    height: 160px;
+    background-color: #203D4D;
+    margin: auto;
+    border-radius: 25px;
+    overflow: hidden;
+    border-style: solid;
+    margin-bottom: 20px;
+}
+
+.container-ejercicio-1 {
+    width: 160px;
+    height: 100%;
+
+}
+
+.container-ejercicio-1 img {
+    height: 100%;
+    width: 100%;
+
+}
+
+.container-ejercicio-2 {
+    display: flex;
+    width: 240px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-ejercicio-2 h1{
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+}
+
+.container-ejercicio-2 p {
+    font-size: 12px;
+    font-weight: 300;
+    color: white;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.comenzar {
+    display: flex;
+    width: 75%;
+    height: 20px;
+    background-color: black;
+    border-radius: 25px;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.comenzar-1 {
+    width: 85%;
+    display: flex;
+    padding-left: 20%;
+}
+
+.comenzar-2 {
+    width: 15%;
+    border-radius: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.comenzar-2 img {
+    height: 150%;
+    width: 150%;
+}
+
+.comenzar p{
+    font-weight: 300;
+    font-size: 12px;
+    color: #4D7BF1;
+}
+
+
+
+
+
+
+
+p {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.p1 {
+    font-size: 24px;
+    font-weight: 300;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 500;
+}
