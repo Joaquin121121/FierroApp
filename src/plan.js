@@ -1,29 +1,44 @@
-class Ejercicio {
-    constructor(id, nombre, nombreImagen, series, reps, peso,){
-        this.id = id
-        this.nombre = nombre
-        this.nombreImagen = nombreImagen
-        this.series = series
-        this.reps = reps
-        this.peso = peso
-    }
-}
-const nombres = ["Press de banca", "Press de banca inclinado", "Pecho máquina", "Mariposa", "Tricep soga", "Tricep polea", "Tricep francés"]
+import { initializeApp } from "firebase/app"
+import { 
+    getFirestore, collection, getDocs
+} from "firebase/firestore"
 
-const nombresImagenes = ["PECHO.jpg", "PRESS-INCLINADO.jpeg", "PECHO-MAQUINA.jpg", "MARIPOSA.jpg", "TRICEP-SOGA.jpg", "TRICEP-POLEA.jpg", "TRICEP-FRANCES.jpeg"]
 
-const series = new Array(7).fill(3)
 
-const reps = new Array(7).fill(8)
+//Tipo de plan
 
-const pesos = [30, 25, 45, 55, 27, 27, 14]
+const tipo_plan = "pecho"
 
-let ejercicios = []
+const firebaseConfig = {
+    apiKey: "AIzaSyDFhZxCT21s5aJXfZlSuV0cEJrM9xGQ72A",
+    authDomain: "fierro-app.firebaseapp.com",
+    projectId: "fierro-app",
+    storageBucket: "fierro-app.appspot.com",
+    messagingSenderId: "805835831252",
+    appId: "1:805835831252:web:959f12a510a79d5412c841",
+    measurementId: "G-RBVQ4W3Q5D"
+  };
 
-for(let i = 0; i < 7; i++){
-    let ejercicio = new Ejercicio(i+1, nombres[i], nombresImagenes[i], series[i], reps[i], pesos[i])
-    ejercicios.push(ejercicio)
-}
+initializeApp(firebaseConfig)
+
+/* Init services */
+const db = getFirestore()
+
+const colRef = collection(db, `ejercicios_${tipo_plan}`)
+
+getDocs(colRef)/* Trae todos los documentos del colRef (planes) */
+    .then((snapshot) => {
+        let ejercicios = []
+        snapshot.docs.forEach((doc) => {
+            ejercicios.push({ ...doc.data(), id: doc.id }) /* ... añade los atributos al nuevo objeto */
+        })
+        cargarEjercicios(ejercicios)
+    })
+    .catch(err => {
+        console.log("botardo")
+    })
+
+
 
 
 
