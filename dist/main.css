@@ -1,0 +1,537 @@
+body{
+    font-family: "Inter";
+    background-color: #ecefea;
+}
+
+h1{
+
+    font-size: 40;
+    font-weight: 600;
+}
+
+img{
+    height: 100%;
+    width: 100%;
+}
+
+
+#card-1{
+    margin-top: 20px;
+    margin-left: 25px;
+    width : 25%;
+    height: 95vh;
+    border-radius: 25px;
+    transition: transform 1s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.card{
+
+    border-radius: 25px;
+    transition: transform 1s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover{
+    transform: scale(1.03); 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /
+}
+
+.card .header{
+    width: 90%;
+    padding-left: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: end;
+    margin-top: 50px;
+}
+
+.card .header .icon-container{
+    width: 60px;
+    height: 60px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0e0c0a;
+}
+
+.card .header .marca {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5%;
+}
+
+.card .header .icon-container .icon{
+    transform: rotate(135deg);
+}
+
+.botones{
+    width: 95%;
+    margin-left: 5px;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+.botones .boton{
+    color:#71797E;	
+    display: flex;
+    align-items: center;
+    height: 50px;
+    border-radius: 25px;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    transition: background-color 0.5s ease;
+}
+.botones .boton:hover{
+    background-color: #E5E4E2;
+    color: black;
+}
+
+.botones .boton h6{
+    margin-top: 5px;
+    margin-bottom: 0px;
+    margin-left: 20px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.botones .boton .icon-container{
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botones .boton .extra{
+    position: absolute;
+    right: 20px;
+    width: 18%;;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 5px;
+}
+
+.botones .boton .extra .icon-container{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    border-radius: 50px;
+    transition: background-color 1s ease ;
+}
+
+.botones .boton .extra .icon-container:hover{
+    background-color: #bbb6af;
+    color: black;
+}
+
+.botones .boton .extra .planes{
+    width : 40%;
+    border-radius: 5px;
+    background-color: #89CFF0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botones .boton .extra .planes p{
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.cards-right{
+    width: 72%;
+    margin-top: 20px;
+    margin-left: 8px;
+    height: 95vh;
+}
+
+.cards-right .top{
+    height: 30%;
+    display: flex;
+}
+
+#card-2{
+    margin-right: 8px;
+    width : 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#card-2 h1{
+    font-weight: 400;
+}
+
+#card-2 .middle-container{
+    height: 60%;
+    width: 95%;
+    display: flex;
+    align-items: center;
+}
+
+#card-2 .middle-container .container-sesiones-exterior{
+    height: 80%;
+    width: 50%;
+    border-radius: 25px;
+    padding-bottom: 5px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    background-color: #0989FF;
+    margin-right: 15%;
+}
+
+#card-2 .middle-container .container-sesiones-exterior .container-sesiones-interior{
+    border-radius: 25px;
+    height: 85%;
+    width: 95%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+
+#card-2 .middle-container .container-sesiones-exterior .container-sesiones-interior .container-texto{
+    height: 100%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    color: #0989FF;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+
+
+#card-2 .middle-container .container-sesiones-exterior .container-sesiones-interior .container-texto h1{
+    margin-right:20%;
+    font-weight: 900;
+}
+
+#card-2 .middle-container .container-imagen{
+    width: 250px;
+    height: 200px;
+}
+
+#card-2 .progress-container{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#card-2 .progress-container .progress{
+    width: 90%;
+    height: 50%;
+}
+
+
+
+#progreso-semanal{
+    width: 33%;
+    
+}
+
+#card-3{
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0 30px;
+}
+
+#card-3 .container-texto{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+#card-3 .container-texto .streak{
+    width: 100%;
+    font-weight: 900;
+    color: #0989FF;
+    font-size: 64px;
+    line-height: 1.2;
+
+}
+
+#card-3 .container-texto h1{
+    color: #FF9900;
+    font-weight: 600;
+}
+
+#card-3 .container-imagen{
+    width: 40%;
+    height: 90%;
+}
+
+
+
+#card-4{
+    margin-top: 8px;
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#card-4 .container-inicio{
+    width: 70%;
+    height: 40%;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    transition: transform 1s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+#card-4 .container-inicio:hover{
+    transform: scale(1.01); 
+    box-shadow: 0 0 20px inset rgba(0, 0, 0, 0.342)
+}
+
+#card-4 .container-inicio h1{
+    width: 330px;
+}
+
+#card-4 .container-nuevo{
+    background-color: #28A745;
+    display: flex;
+    align-items: center;
+}
+
+
+
+#card-4 .container-nuevo .suma-container{
+    margin-left: 5%;
+    width: 110px;
+    height: 110px;
+    position: relative;
+    padding: none;
+    margin-right: 7%;
+}
+
+#card-4 .container-nuevo .suma-container .suma-vertical{
+    height: 110px;
+    position: absolute;
+    right: 50px;
+    width: 10px;
+    background-color: #EBEBEB;
+    border-radius: 25px;
+
+}
+
+#card-4 .container-nuevo .suma-container .suma-horizontal{
+    width: 110px;
+    position: absolute;
+    top: 50px;
+    height: 10px;
+    background-color: #EBEBEB;
+    border-radius: 25px;  
+
+}
+
+#card-4 .container-inicio h1{
+    color: white;
+    margin-right: 12%;
+
+}
+
+#card-4 .container-inicio .container-image{
+    width: 114px;
+    height: 212px;
+}
+
+
+#card-4 .container-cargar{
+    margin-top: 5%;
+    background-color: #0989FF;
+}
+
+
+#card-4 .container-cargar .upload-container{
+    margin-left: 5%;
+    width: 110px;
+    height: 110px;
+    margin-right: 7%;
+}
+
+
+/* CREAR PLAN */
+
+
+#card-4 .crear h1{
+    margin-top: 30px;
+    font-weight: 400;
+}
+#card-4 .container-frecuencia{
+    margin-top: 15px;
+    width: 90%;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#card-4 .container-frecuencia h1{
+    font-weight: 300;
+}
+
+
+#card-4 .container-frecuencia .sliders {
+    height: 100%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#card-4 .container-frecuencia .sliders .slider {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+}
+
+#card-4 .container-frecuencia .sliders .slider .slider-barra{
+    height: 10px;
+    width: 60%;
+    border-radius: 25px;
+    background-color: #ECEFEA;
+    border-width: thin;
+}
+
+#card-4 .container-frecuencia .sliders .slider .slider-barra .progreso {
+    width: 33%;
+    height: 100%;
+    background-color: #0989FF;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+#card-4 .container-frecuencia .sliders .slider .slider-barra .progreso .pill{
+    width: 27px;
+    height: 60px;
+    border-radius: 25px;
+    background-color: white;
+    border-color: #0989FF;
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pill .line{
+    width: 80%;
+    height: 2px;
+    background-color: #0989FF;
+    margin-top: 12px;
+}
+
+#card-4 .container-frecuencia .sliders .slider .counter{
+    font-size: 40px;
+    font-weight: 900;
+    color: #0989FF;
+    margin-left: 0px;
+    width: 100px;
+    text-align: right;
+}
+
+#card-4 .container-frecuencia .sliders .slider p{
+    font-size: 400;
+    font-size: 16px;
+    margin-bottom: 0px;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+
+
+#card-4 .container-objetivo{
+    margin-top: 25px;
+    width: 90%;
+    height: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+#card-4 .container-objetivo h1{
+    font-weight: 300;
+}
+
+#card-4 .container-objetivo .objetivo{
+    width: 200px;
+    height: 85%;
+    border-style: solid;
+    border-color: #D9D9D9;
+    border-width: thin;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 1s ease;
+
+}
+
+#card-4 .container-objetivo .objetivo:hover{
+    transform: scale(1.03); 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+#card-4 .container-objetivo .objetivo .container-image{
+    height: 70%;
+    width: 100%;
+    border-radius: 25px;
+}
+#card-4 .container-objetivo .objetivo .container-text{
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#card-4 .boton {
+    width: 215px;
+    height: 45px;
+    background-color: #0989FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 1s ease;
+    border-radius: 25px;
+}
+
+#card-4 .boton:hover {
+    transform: scale(1.03); 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+#card-4 .boton p{
+    color: white;
+    font-size: 16px;
+    font-weight: 900;
+    margin: 0px;
+}
+
+
+

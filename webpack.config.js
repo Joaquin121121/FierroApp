@@ -2,10 +2,13 @@ const path = require('path')
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.js',
+  entry: {
+    dbLoader : './src/dbLoader',
+    main: "./src/main"
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: '[name]_bundle.js'
   },
   watch: true
 }

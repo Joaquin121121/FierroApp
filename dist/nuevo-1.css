@@ -1,0 +1,255 @@
+body{
+    background-color: #ECEFEA;
+}
+
+
+img{
+    height: 100%;
+    width: 100%;
+}
+
+.container{
+    font-family: "Inter";
+    background-color: #ECEFEA;
+}
+
+
+.container h1{
+    font-size: 40;
+    text-align: center;
+    margin: 0px;
+}
+
+
+.header{
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.marca{
+    height: 100%;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.icon-container{
+    width: 60px;
+    height: 60px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0e0c0a;
+}
+
+.icon-container .icon{
+    transform: rotate(135deg);
+}
+
+.usuario{
+    height: 100%;
+    width: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 16px;
+    
+}
+
+.usuario i{
+    color: #71797E;
+
+}
+
+.card{
+    padding: 0 20px;
+    border-radius: 25px;
+}
+
+
+
+
+.crear h1{
+    margin-top: 70px;
+    font-weight: 400;
+    text-align: center;
+    color: #0989FF;
+}
+
+.container-frecuencia{
+    margin-top: 50px;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container-frecuencia h1{
+    font-weight: 300;
+}
+
+.container-frecuencia .sliders {
+    height: 100%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container-frecuencia .sliders .slider {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+}
+.container-frecuencia .sliders .slider .slider-barra{
+    height: 10px;
+    width: 60%;
+    border-radius: 25px;
+    background-color: #ECEFEA;
+    border-width: thin;
+}
+
+.container-frecuencia .sliders .slider .slider-barra .progreso {
+    width: 33%;
+    height: 100%;
+    background-color: #0989FF;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.container-frecuencia .sliders .slider .slider-barra .progreso .pill{
+    width: 27px;
+    height: 60px;
+    border-radius: 25px;
+    background-color: white;
+    border-color: #0989FF;
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pill .line{
+    width: 80%;
+    height: 2px;
+    background-color: #0989FF;
+    margin-top: 12px;
+}
+
+.container-frecuencia .sliders .slider .counter{
+    font-size: 40px;
+    font-weight: 900;
+    color: #0989FF;
+    margin-left: 0px;
+    width: 100px;
+    text-align: right;
+}
+
+.container-frecuencia .sliders .slider p{
+    font-size: 400;
+    font-size: 16px;
+    margin-bottom: 0px;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+
+
+.container-objetivo{
+    margin-top: 80px;
+    width: 100%;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.container-objetivo h1{
+    font-weight: 300;
+    margin-right: 5%;
+}
+
+.container-objetivo .objetivo{
+    width: 200px;
+    height: 250px;
+    border-style: solid;
+    border-color: #D9D9D9;
+    border-width: thin;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 1s ease;
+
+}
+
+.container-objetivo .objetivo:hover{
+    transform: scale(1.03); 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.container-objetivo .objetivo .container-image{
+    height: 70%;
+    width: 100%;
+    border-radius: 25px;
+}
+.container-objetivo .objetivo .container-text{
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.botones{
+    width: 60%;
+    margin: auto;
+    margin-top: 120px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.boton{
+    width: 215px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 1s ease;
+    border-radius: 25px;
+    color: white;
+    font-size: 16px;
+    font-weight: 900;
+    margin: 0px;
+}
+
+.boton-volver{
+    background-color: #adb5bd;
+}
+
+.boton-comenzar {
+    background-color: #28A745;
+}
+
+
+
+.boton:hover {
+    transform: scale(1.03); 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+

@@ -5,6 +5,7 @@ import {
 
 
 
+
 //Tipo de plan
 
 const tipo_plan = "pecho"
@@ -42,27 +43,22 @@ getDocs(colRef)/* Trae todos los documentos del colRef (planes) */
 
 
 
-const cargarEjercicios = () => {
+const cargarEjercicios = (ejercicios) => {
     let seccion = document.getElementById("ejercicios")
     let contenido = ""
-    ejercicios.forEach(e => {
+    ejercicios.forEach((e) => {
         contenido += `        
         <div class="container-ejercicio">
             <div class="container-ejercicio-1">
-                <img src="../Imagenes/${e.nombreImagen}" alt="">
+                <img src="./Imagenes/${e.nombre_imagen}" alt="">
             </div>
             <div class="container-ejercicio-2">
                 <h1>${e.nombre}</h1>
                 <p>Objetivo:
                     ${e.reps} repeticiones x ${e.peso} kgs
                 </p>
-                <div class="boton-completado" id="boton-completado-${e.id}">
-                    <div class="boton-completado-1">
-                        <p>Completado</p>
-                    </div>
-                    <div class="boton-completado-2">
-                        <img src="../Imagenes/TICK-VERDE.png" alt="">
-                    </div>
+                <div class=btn-container>
+                    <button class="btn btn-success boton-completado rounded-pill btn-block btn-sm" id="boton-completado-${e.id}">Completado</button>
                 </div>
             </div>
         </div>
@@ -71,4 +67,3 @@ const cargarEjercicios = () => {
     seccion.innerHTML = contenido
 }
 
-window.onload = cargarEjercicios()

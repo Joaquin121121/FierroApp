@@ -1,0 +1,35 @@
+FEATURES A IMPLEMENTAR
+
+Opción Comenzar --> 2 opciones:
+    Crear plan --> 3 objetivos --> Fuerza, Hipertrofia o Fuerza + Hipertrofia --> Elegir cantidad de días disponibles (entre 3 y 5), duración deseada (llenar barrita entre 40 minutos y 2 horas), y equipamiento disponible --> plan tentativo, permitiendole al usuario cambiar ejercicios por similares o eliminar ejercicios
+    Añadir plan existente --> 3 opciones:
+        Elegir número de días, y llenar los ejercicios de cada día
+        Escaneear plan físico --> se llena plan tentativo, con opciones de modificar, añadir info
+        Subir plan digital --> se llena plan tentativo, con opciones de modificar, añadir info
+
+Game Features:
+    Progreso semanal:
+        Barra de progreso que se llena de distintos colores de acuerdo a la cantidad de planes realizados en la semana
+        Personaje animado cuyo humor va mejorando a medida que crece la barra de progreso
+    Racha perfecta:
+        Llama que va creciendo a medida que se van acumulando las semanas perfectas
+        Contador en naranja al lado de la llama con el número de semanas perfectas seguidas
+    Leaderboards(A implementar en un futuro) --> División por ligas(oro, platino, diamante, etc) de acuerdo a la cantidad de horas semanales. Dentro de la liga, se compite por cantidad de semanas perfectas. Temporadas de 4 meses
+
+Mis Estadísticas:
+    Puntaje de sesiones completadas sobre sesiones totales:
+        Barra de progreso circular llena con el porcentaje de sesiones completadas sobre sesiones totales
+            Dentro de la barra, el puntaje del 1 al 10
+        Mejor que el x% de los usuarios. Sigue así!
+        Personaje animado levantando pesas 
+    Carrera contra mi yo perfecto
+        Fondo de Carrera
+        Personaje 1 --> la mayoría de las personas --> cansado al principio de la carrera
+        Personaje 2 --> el usuario --> corriendo energéticamente --> qué tan cerca está del personaje 3 depende de su puntaje de sesiones completadas sobre sesiones totales. Halo dorado si viene en racha perfecta, dentro del halo se lee "RACHA PERFECTA"
+        Personaje 3 --> el usuario perfecto --> corriendo cómodamente
+     
+
+Calendario: 
+    Calendario con ticks verdes en los días donde se entrenó, y con color naranja y llamas animadas en las semanas perfectas
+
+    

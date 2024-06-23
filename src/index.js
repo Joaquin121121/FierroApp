@@ -1,39 +1,35 @@
 import { initializeApp } from "firebase/app"
 import { 
     getFirestore, collection, getDocs,
-    addDoc, deleteDoc, doc
+    addDoc, deleteDoc, doc,
+    query, where,
+    orderBy, serverTimestamp,
+    getDoc,
+    onSnapshot
 } from "firebase/firestore"
+import { iniciarBD } from "./db.js"
 
-
-
-const firebaseConfig = {
-    apiKey: "AIzaSyDFhZxCT21s5aJXfZlSuV0cEJrM9xGQ72A",
-    authDomain: "fierro-app.firebaseapp.com",
-    projectId: "fierro-app",
-    storageBucket: "fierro-app.appspot.com",
-    messagingSenderId: "805835831252",
-    appId: "1:805835831252:web:959f12a510a79d5412c841",
-    measurementId: "G-RBVQ4W3Q5D"
-  };
-
-initializeApp(firebaseConfig)
-
-/* Init services */
-const db = getFirestore()
+const db = iniciarBD()
 
 const colRef = collection(db, "planes")
 
-getDocs(colRef)/* Trae todos los documentos del colRef (planes) */
+/* Query */
+
+const q = query(colRef,/*  where("nombre", "!=", "a"), */ orderBy("nombre", "asc"))/* En vez de asc, puedo poner createdAt */
+
+getDocs(q)/* Trae todos los documentos del colRef (planes) */
     .then((snapshot) => {
         let planes = []
         snapshot.docs.forEach((doc) => {
             planes.push({ ...doc.data(), id: doc.id }) /* ... añade los atributos al nuevo objeto */
         })
         cargarPlanes(planes)
+        prepararBotones(planes)
     })
     .catch(err => {
         console.log("botardo")
     })
+
 
 
 
@@ -45,18 +41,18 @@ const cargarPlanes = (planes) => {
         contenido += `
         <div class="container-ejercicio">
             <div class="container-ejercicio-1">
-                <img src="../Imagenes/${plan.nombre_imagen}" alt="">
+                <img src="./Imagenes/${plan.nombre_imagen}" alt="">
             </div>
             <div class="container-ejercicio-2">
                 <h1>${plan.nombre}</h1>
                 <p>Duración: ${plan.tiempo} minutos</p>
                 <p>Ejercicios: ${plan.cantidad_ejercicios}</p>
-                <div class="comenzar">
+                <div class="comenzar" id="plan-${plan.nombre}">
                     <div class="comenzar-1">
                         <p>Comenzar</p>
                     </div>
                     <div class="comenzar-2">
-                        <img src="../Imagenes/TICK-AZUL.png" alt="">
+                        <img src="./Imagenes/TICK-AZUL.png" alt="">
                     </div> 
                 </div>
             </div>
@@ -65,16 +61,31 @@ const cargarPlanes = (planes) => {
     seccion.innerHTML = contenido
 }
 
+const prepararBotones = (planes) => {
+    const botones = planes.map((plan) => {
+        return document.getElementById(`plan-${plan.nombre}`)})
+    botones.forEach((e) => {
+        e.addEventListener("click", () => {
+            cargarPagina(`${e.id.toLowerCase()}`)
+        })
+    }
+)
+}
+
+
+
+
 
 /* Añadir documentos */
-
+/* 
 const addBookForm = document.querySelector(".add")
 addBookForm.addEventListener("submit", (e) => {
     e.preventDefault()
 
     addDoc(colRef, {
         title: addBookForm.title.value,
-        author: addBookForm.author.value/* author y title son los names de los inputs hijos de la form .add*/
+        author: addBookForm.author.value /*author y title son los names de los inputs hijos de la form .add
+        createdAt: serverTimestamp()
     })
     .then(() => {
         addBookForm.reset()
@@ -88,4 +99,19 @@ deleteBookForm.addEventListener("submit", (e) => {
     const docRef = doc(db, "books", deleteBookForm.id.value)
 
     deleteDoc(docRef)
-})
+}) */
+
+
+/* get a single document */
+
+/* const docRef = doc(db, "books", DocID)
+
+getDoc(docRef)
+    .then((doc) => {
+        console.log(doc.data(), doc.id)
+    })
+
+onSnapshot(docRef, (doc) => {
+    console.log(doc.data, doc.id)
+}) */
+

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid d-flex">
+        <div class="card" id="card-1">
+            <div class="header">
+                <div class="icon-container">
+                    <i class="icon fa-solid fa-dumbbell fa-2xl" style="color: #ffffff;"></i>
+                </div>
+                <div class="marca">
+                    <h1>Fierro App</h1>
+                </div>
+            </div>
+            <div class="botones">
+                <div class="boton">
+                    <div class="icon-container">
+                        <i class="fa-solid fa-house fa-xl"></i>
+                    </div>
+                    <h6>Home</h6>
+                </div>
+                <div class="boton">
+                    <div class="icon-container">
+                        <i class="fa-solid fa-dumbbell fa-xl"></i>
+                    </div>
+                    <h6>Registrar Entrenamiento</h6>
+                </div>
+                <div class="boton">
+                    <div class="icon-container">
+                        <i class="fa-solid fa-calendar-days fa-xl"></i>
+                    </div>
+                    <h6>Calendario</h6>
+                </div>
+                <div class="boton">
+                    <div class="icon-container">
+                        <i class="fa-solid fa-clipboard-list fa-xl"></i>
+                    </div>
+                    <h6>Mi Plan</h6>
+                    <div class="extra">
+                        <div class="icon-container">
+                            <i class="fa-solid fa-pencil fa-md"></i>
+                        </div>
+                        <div class="planes">
+                            <p>4</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="boton">
+                    <div class="icon-container">
+                        <i class="fa-solid fa-chart-simple fa-xl"></i>
+                    </div>
+                    <h6>Mis Estadísticas</h6>        
+                </div>
+            </div>
+        </div>
+        <div class="cards-right">
+            <div class="top">
+                <div class="card" id="card-2">
+                    <h1>Mi Semana</h1>
+                    <div class="middle-container">
+                        <div class="container-sesiones-exterior">
+                            <div class="container-sesiones-interior">
+                                <div class="container-texto">
+                                    <h1>1/3</h1>
+                                    Sesiones Completadas
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-imagen">
+                            <img src="Imagenes/WEIGHTLIFTING.gif" alt="">
+                        </div>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id="progreso-semanal"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" id="card-3">
+                    <div class="container-texto">
+                        <span class="streak">50</span>
+                        <h1>días de racha!</h1>
+                    </div>
+                    <div class="container-imagen">
+                        <img src="Imagenes/STREAK.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="card-4">
+                <div class="crear">
+                    <h1>Cuéntanos sobre tu plan</h1>
+                </div>    
+                <div class="container-frecuencia">
+                    <h1>Frecuencia</h1>
+                    <div class="sliders">
+                        <div class="slider">
+                            <div class="slider-barra" id="slider-sesiones">
+                                <div class="progreso" id="progreso-sesiones">
+                                    <div class="pill" id="pill-sesiones">
+                                        <div class="line"></div>
+                                        <div class="line"></div>
+                                        <div class="line"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="counter" id="counter-sesiones">3</div> 
+                            <p>sesiones x semana</p>
+                        </div>
+                        <div class="slider">
+                            <div class="slider-barra" id="slider-duracion">
+                                <div class="progreso" id="progreso-duracion">
+                                    <div class="pill" id="pill-duracion">
+                                        <div class="line"></div>
+                                        <div class="line"></div>
+                                        <div class="line"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="counter" id="counter-duracion">60</div> 
+                            <p>minutos x sesión</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-objetivo">
+                    <h1>Objetivo</h1>
+                    <div class="objetivo" id="fuerza">
+                        <div class="container-image">
+                            <img src="Imagenes/STRONGMAN.png" alt="">
+                        </div>
+                        <div class="container-text">
+                            Fuerza
+                        </div>
+                    </div>
+                    <div class="objetivo" id="hipertrofia">
+                        <div class="container-image">
+                            <img src="Imagenes/CBUM.jpg" alt="">
+                        </div>
+                        <div class="container-text">
+                            Hipertrofia
+                        </div>
+                    </div>
+                    <div class="objetivo" id="funcional">
+                        <div class="container-image">
+                            <img src="Imagenes/GOGGINS.png" alt="">
+                        </div>
+                        <div class="container-text">
+                            Funcional
+                        </div>
+                    </div>
+                </div>
+                <div class="boton">
+                    <p>Comenzar</p>
+                </div>
+            </div>
+        </div>
+    </div>        
+    
+
+        
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="main_bundle.js"></script>
+</body>

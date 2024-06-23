@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .card{
+            border-radius: 25px;
+        }
+    </style>
+    <title>dbLoader</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h1 style="text-align: center;">Cargar Ejercicios</h1>
+            </div>
+            <div class="card-body">
+                <form action="" class="form" id="form">
+                    <div class="form-group">
+                        <label for="">Nombre</label>
+                        <input type="text" id="nombre" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Seleccionar grupo muscular</label>
+                        <select class="form-control" id="grupo">
+                            <option value="pecho">Pecho</option>
+                            <option value="espalda">Espalda</option>
+                            <option value="piernas">Piernas</option>
+                            <option value="biceps">Biceps</option>
+                            <option value="triceps">Triceps</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Cargar</button>
+                </form>
+                <div class="card" style="margin-top: 50px;">
+                    <div class="card-header">
+                        <h4>Logs</h4>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <th>Ejercicio</th>
+                                <th>Grupo</th>
+                                <th>Estado</th>
+                                <th>Razon</th>
+                            </thead>
+                            <tbody id="tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+        
+    </div>
+    
+
+    <script src="dbLoader_bundle.js"></script>
+</body>
+</html>
