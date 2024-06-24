@@ -54,17 +54,17 @@ img{
 
 .usuario{
     height: 100%;
-    width: 8%;
+    width: 14%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     font-weight: 700;
     font-size: 16px;
-    
 }
 
 .usuario i{
-    color: #71797E;
+    color: #0989FF;
+    margin-right: 20px;
+
 
 }
 
@@ -212,16 +212,15 @@ img{
 
 
 .botones{
-    width: 60%;
-    margin: auto;
-    margin-top: 120px;
+    width: 75%;
+    margin: 80px auto;
     display: flex;
     justify-content: space-between;
 }
 
 .boton{
-    width: 215px;
-    height: 45px;
+    width: 300px;
+    height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;

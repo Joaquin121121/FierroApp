@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="login.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container-login">
+        <div class="card-login">
+            <div class="heading">
+                Progreso <span class="white">visible.</span> Motivación <span class="white">imparable.</span>
+            </div>
+            <div class="sub-heading">
+                Seguimiento personalizado y motivación constante para ayudarte a perseverar y alcanzar tus metas.
+            </div>
+            <div class="image-container">
+                <img src="./Imagenes/GYM.webp" alt="">
+            </div>
+        </div>
+        <div class="login">
+            <div class="header">
+                <div class="icon-container">
+                    <i class="icon fa-solid fa-dumbbell fa-2xl" style="color: #ffffff;"></i>
+                </div>
+                <div class="marca">
+                    <h1>Fierro App</h1>
+                </div>
+                
+            </div>
+            <div class="sub-header">
+                <h1>Bienvenido</h1>
+                <p>Por favor ingrese a su cuenta, o regístrese.</p>
+            </div>
+            <div class="input-usuario">
+                <input maxlength="15" class="form-control" type="text" placeholder="Usuario" id="usuario">
+                <div class="error" id="error-usuario"></div>
+                <input maxlength="15" type="text" class="form-control" placeholder="Contraseña" id="contraseña">
+                <div class="error" id="error-contraseña"></div>
+                <div class="container-boton-ingresar">
+                    <button class="boton-ingresar" id="ingresar">Ingresar</button>
+                </div>
+            </div>
+            <div class="line"></div>
+            <p>No tiene cuenta?</p>
+            <button class="boton-registrar" id="registrar">Registrarse</button>
+        </div>
+    </div>
+    <script src="main_bundle.js"></script>
+</body>
+</html>
