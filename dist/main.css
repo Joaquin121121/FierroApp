@@ -88,6 +88,7 @@ img{
 .botones .boton:hover{
     background-color: #E5E4E2;
     color: black;
+    cursor: pointer;
 }
 
 .botones .boton h6{

@@ -1,11 +1,13 @@
 FEATURES A IMPLEMENTAR
 
 Opción Comenzar --> 2 opciones:
-    Crear plan --> 3 objetivos --> Fuerza, Hipertrofia o Fuerza + Hipertrofia --> Elegir cantidad de días disponibles (entre 3 y 5), duración deseada (llenar barrita entre 40 minutos y 2 horas), y equipamiento disponible --> plan tentativo, permitiendole al usuario cambiar ejercicios por similares o eliminar ejercicios
+    Crear plan --> 3 objetivos --> Fuerza, Hipertrofia o Funcional --> Elegir cantidad de días disponibles (entre 3 y 5), duración deseada (llenar barrita entre 40 minutos y 2 horas), equipamiento disponible, y foco principal (tren superior vs tren inferior) --> plan tentativo, permitiendole al usuario cambiar ejercicios por similares o eliminar ejercicios
+
     Añadir plan existente --> 3 opciones:
         Elegir número de días, y llenar los ejercicios de cada día
         Escaneear plan físico --> se llena plan tentativo, con opciones de modificar, añadir info
         Subir plan digital --> se llena plan tentativo, con opciones de modificar, añadir info
+    
 
 Game Features:
     Progreso semanal:
@@ -32,4 +34,8 @@ Mis Estadísticas:
 Calendario: 
     Calendario con ticks verdes en los días donde se entrenó, y con color naranja y llamas animadas en las semanas perfectas
 
-    
+
+
+Masculino vs Femenino --> cambiar imagenes
+
+

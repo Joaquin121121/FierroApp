@@ -1,0 +1,149 @@
+body{
+    font-family: "Inter";
+    background-color: #ECEFEA;
+}
+
+
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+h1{
+    font-weight: 600;
+}
+
+.card{
+    background-color: white;
+    border-radius: 25px;
+    transition: transform 1s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.card:hover{
+    transform: scale(1.03); 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /
+}
+
+.container-left{
+    width: 25%;
+    height: 110vh;
+    margin-left: 25px;
+}
+
+.card .header{
+    width: 90%;
+    padding-left: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: end;
+    margin-top: 50px;
+}
+
+.card .header .icon-container{
+    width: 60px;
+    height: 60px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0e0c0a;
+}
+
+.card .header .marca {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5%;
+}
+
+.card .header .icon-container .icon{
+    transform: rotate(135deg);
+}
+.botones{
+    width: 95%;
+    margin-left: 5px;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+.botones .boton{
+    color:#71797E;	
+    display: flex;
+    align-items: center;
+    height: 50px;
+    border-radius: 25px;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    transition: background-color 0.5s ease;
+    cursor: pointer;
+}
+.botones .boton:hover{
+    background-color: #E5E4E2;
+    color: black;
+}
+
+.botones .boton h6{
+    margin-top: 5px;
+    margin-bottom: 0px;
+    margin-left: 20px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.botones .boton .icon-container{
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botones .boton .extra{
+    position: absolute;
+    right: 20px;
+    width: 18%;;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 5px;
+}
+
+.botones .boton .extra .icon-container{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    border-radius: 50px;
+    transition: background-color 1s ease ;
+}
+
+.botones .boton .extra .icon-container:hover{
+    background-color: #bbb6af;
+    color: black;
+}
+
+.botones .boton .extra .planes{
+    width : 40%;
+    border-radius: 5px;
+    background-color: #89CFF0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botones .boton .extra .planes p{
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+
+.container-right{
+    width: 72%;
+    margin-left: 8px;
+    height: 110vh;
+}
