@@ -87,7 +87,7 @@ button.active{
     margin: auto;
     margin-top: 2.5%;
     width: 90%;
-    height: 90%;
+    height: 110vh;
     border-radius: 25px;
     background-color: white;
     display: flex;
@@ -240,5 +240,11 @@ button.active{
     background-color: #28A745;
 }
 
+
+@media(min-height: 800px){
+    .container-login{
+        height: 90%;
+    }
+}
 
 

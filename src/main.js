@@ -299,19 +299,91 @@ const pantallaNuevo = () => {
     })
     }
 
+
+
 const pantallaCreacion = async() =>{
 
+    const ejerciciosPecho = [
+        {nombre: "Press de Banca", imagen: "PRESS-BANCA.jpg"},
+        {nombre: "Press de Banca Inclinado", imagen: "PRESS-INCLINADO.jpeg"},
+        {nombre: "Fondos de Pecho", imagen: "CHEST-DIPS.jpg"},
+        {nombre: "Press de Banca Declinado", imagen: "PRESS-DECLINADO.jpg"},
+        {nombre: "Aperturas de Pecho con Mancuernas", imagen: "APERTURA-MANCUERNAS.jpg"},
+        {nombre: "Cruces de Poleas para Pecho", imagen: "CRUCE-POLEA.jpg"},
+        {nombre: "Press de Banca con Mancuernas", imagen: "PRESS-MANCUERNAS.jpg"},
+        {nombre: "Pull-over", imagen: "PULLOVER.jpg"}
+    ]
 
+    const ejerciciosEspalda = [
+        { nombre: "Dominada Abierta", imagen: "DOMINADA-ABIERTA.jpeg" },
+        { nombre: "Dominada Cerrada", imagen: "DOMINADA-CERRADA.jpg" },
+        { nombre: "Remo con Barra", imagen: "REMO-BARRA.jpg" },
+        { nombre: "Remo con Mancuerna", imagen: "REMO-MANCUERNAS.jpg" },
+        { nombre: "Peso Muerto", imagen: "PESO-MUERTO.jpg" },
+        { nombre: "Pulldowns al Pecho", imagen: "PULLDOWN-PECHO.jpg" },
+        { nombre: "Remo con Cable", imagen: "REMO-CABLE.jpg" },
+        { nombre: "Hiperextensiones", imagen: "HIPEREXTENSIONES.jpg" }
+    ]
+    
+    const ejerciciosBiceps = [
+        { nombre: "Curl de Bíceps con Barra", imagen: "BICEPS-BARRA.jpg" },
+        { nombre: "Curl de Bíceps con Mancuernas", imagen: "BICEPS-MANCUERNAS.jpg" },
+        { nombre: "Curl de Bíceps con Cable", imagen: "BICEPS-CABLE.jpg" },
+        { nombre: "Martillo de Bíceps", imagen: "BICEPS-MARTILLO.jpg" },
+        { nombre: "Curl de Concentración", imagen: "BICEP-CONCENTRADO.jpg" },
+        { nombre: "Curl de Bíceps Inclinado", imagen: "BICEPS-INCLINADO.jpeg" },
+        { nombre: "Curl de Bíceps en Banco Scott", imagen: "BICEPS-SCOTT.jpg" },
+        { nombre: "Chin-ups (Dominadas Supinas)", imagen: "CHIN-UPS.jpg" }
+    ]
+    
+    const ejerciciosTriceps = [
+        { nombre: "Press Francés", imagen: "TRICEP-FRANCES.jpeg" },
+        { nombre: "Extensiones de Tríceps en Polea Alta", imagen: "TRICEP-POLEA.jpg" },
+        { nombre: "Extensiones de Tríceps con Soga", imagen: "TRICEP-SOGA.jpg" },
+        { nombre: "Fondos de Tríceps", imagen: "TRICEP-DIPS.jpg" },
+        { nombre: "Patada de Tríceps", imagen: "TRICEP-PATADA.jpg" },
+        { nombre: "Press de Tríceps con Mancuernas", imagen: "TRICEP-PRESS.jpg" }
+    ]
+    
+    const ejerciciosPiernas = [
+        { nombre: "Sentadillas (Squats)", imagen: "SENTADILLA.jpeg" },
+        { nombre: "Peso Muerto", imagen: "PESO-MUERTO.jpg" },
+        { nombre: "Zancadas (Lunges)", imagen: "ZANCADAS.jpg" },
+        { nombre: "Prensa de Piernas", imagen: "LEG-PRESS.jpg" },
+        { nombre: "Extensiones de Piernas", imagen: "LEG-EXTENSIONS.jpg" },
+        { nombre: "Calf Raises (Elevaciones de Talones)", imagen: "CALF-RAISES.jpg" },
+        { nombre: "Sentadillas Búlgaras", imagen: "SENTADILLA-BULGARA.jpeg" },
+        { nombre: "Hip Thrusts", imagen: "HIP-THRUSTS.jpg" },
+        { nombre: "Buenos Días", imagen: "GOOD-MORNINGS..jpg" }
+    ]
+    
+    const ejerciciosHombros = [
+        { nombre: "Press Militar", imagen: "PRESS-MILITAR.jpg" },
+        { nombre: "Vuelos Laterales", imagen: "VUELO-LATERAL.jpg" },
+        { nombre: "Vuelos Posteriores", imagen: "VUELO-POSTERIOR.jpeg" },
+        { nombre: "Press Arnold", imagen: "PRESS-ARNOLD.jpeg" },
+        { nombre: "Jalones a la Cara (Face Pulls)", imagen: "FACE-PULLS.jpg" },
+        { nombre: "Remo al Mentón (Upright Rows)", imagen: "REMO-MENTON" }
+    ]
+    
+    const ejerciciosAntebrazos = [
+        { nombre: "Curl de Muñeca con Mancuernas", imagen: "MUÑECA-CURL.jpg" },
+        { nombre: "Curl de Muñeca Inverso con Mancuernas", imagen: "CURL-MUÑECA-INVERTIDO.jpg" },
+        { nombre: "Rotaciones de Muñeca con Mancuernas", imagen: "MUÑECAS-ROTACION.jpg" }
+    ]
+    
     const userdata = JSON.parse(localStorage.getItem("userdata"))
     const sesiones = parseInt(userdata.sesiones)
+    const card = document.getElementById("card")
 
     
     const autoScroll = (sesiones) => {
         let yActual = 0
-        let yObjetivo = 400 + (200 * sesiones)
+        const windowHeight = window.innerHeight
         document.body.style.overflow = "hidden"
+
         let interval = setInterval(()=>{
-            if(yActual < yObjetivo){
+            if((yActual + windowHeight) < document.body.offsetHeight){
                 yActual += 1
                 window.scrollTo(0, yActual)
             }else{
@@ -321,83 +393,8 @@ const pantallaCreacion = async() =>{
         }, 5)
     }
 
-    const crearPlan = async() => {
-        const ejerciciosPecho = [
-            "Press de Banca",
-            "Press de Banca Inclinado",
-            "Fondos de Pecho",
-            "Press de Banca Declinado",
-            "Aperturas de Pecho con Mancuernas",
-            "Cruces de Poleas para Pecho",
-            "Press de Banca con Mancuernas",
-            "Pull-over"
-        ]
-    
-    
-        const ejerciciosEspalda = [
-            "Dominada Abierta",
-            "Dominada Cerrada",
-            "Remo con Barra",
-            "Remo con Mancuerna",
-            "Peso Muerto",
-            "Pulldowns al Pecho",
-            "Pulldowns al Cuello",
-            "Remo en Máquina",
-            "Remo con Cable",
-            "Hiperextensiones",
-            "Pull-overs"
-        ]
-        const ejerciciosBiceps = [
-            "Curl de Bíceps con Barra",
-            "Curl de Bíceps con Mancuernas",
-            "Curl de Bíceps con Cable",
-            "Martillo de Bíceps",
-            "Curl de Concentración",
-            "Curl de Bíceps Inclinado",
-            "Curl de Bíceps en Banco Scott",
-            "Chin-ups (Dominadas Supinas)"
-        ]
-        const ejerciciosTriceps = [
-            "Press Francés",
-            "Extensiones de Tríceps en Polea Alta",
-            "Extensiones de Tríceps con Soga",
-            "Fondos de Tríceps",
-            "Patada de Tríceps",
-            "Press de Tríceps con Mancuernas",
-            "Extensiones de Tríceps en Banco",
-            "Press de Tríceps en Máquina",
-        ]
-        const ejerciciosPiernas = [
-            "Sentadillas (Squats)",
-            "Peso Muerto",
-            "Zancadas (Lunges)",
-            "Prensa de Piernas",
-            "Extensiones de Piernas",
-            "Calf Raises (Elevaciones de Talones)",
-            "Sentadillas Búlgaras",
-            "Hip Thrusts",
-            "Buenos Días"
-        ]
-        const ejerciciosHombros = [
-            "Press Militar",
-            "Vuelos Laterales",
-            "Vuelos Posteriores",
-            "Press Arnold",
-            "Jalones a la Cara (Face Pulls)",
-            "Remo al Mentón (Upright Rows)",
-            "Elevaciones Frontales"
-        ]
-        const ejerciciosAntebrazos = [
-            "Curl de Muñeca con Barra",
-            "Curl Inverso con Barra",
-            "Curl de Muñeca con Mancuernas",
-            "Curl de Muñeca Inverso con Mancuernas",
-            "Rotaciones de Muñeca con Mancuernas",
-            "Apretón de Mano con Mancuernas",
-            "Extensión de Muñeca con Barra",
-            "Dominadas de Agarre Inverso",
-            "Tirón de Toalla"
-        ]
+    const crearPlan = () => {
+        
         const listaPrincipales = ["piernas", "espalda", "pecho"]
         const setsSemanales = Math.floor((userdata.duracion - 15) / 2 * sesiones)
         const antebrazos = (setsSemanales > 84)
@@ -543,6 +540,7 @@ const pantallaCreacion = async() =>{
         }
         let pointer_pecho = 0, pointer_espalda = 0, pointer_piernas = 0, pointer_hombros = 0, pointer_triceps = 0, pointer_biceps = 0, pointer_antebrazos = 0
         for(let i = 0; i < sesiones; i++){
+            plan[`sesion ${i + 1}`].lista_ejercicios = []
             if(plan[`sesion ${i + 1}`].pecho){
                 plan[`sesion ${i + 1}`].ejercicios_pecho = []
                 for(let j = 0; j < plan[`sesion ${i + 1}`].pecho; j+=3){
@@ -550,8 +548,10 @@ const pantallaCreacion = async() =>{
                     pointer_pecho++
                 }
                 plan[`sesion ${i + 1}`].ejercicios_pecho = plan[`sesion ${i + 1}`].ejercicios_pecho.map((e, k) => {
-                    return (((k + 1) * 3) <= plan[`sesion ${i + 1}`].pecho) ? {nombre : e, sets : 3, reps : 6} : {nombre : e, sets : (plan[`sesion ${i + 1}`].pecho % 3), reps : 6}   
+                    return (((k + 1) * 3) <= plan[`sesion ${i + 1}`].pecho) ? {ejercicio : e, sets : 3, reps : 6} : {ejercicio : e, sets : (plan[`sesion ${i + 1}`].pecho % 3), reps : 6}   
                 })
+                plan[`sesion ${i + 1}`].lista_ejercicios.push(...plan[`sesion ${i + 1}`].ejercicios_pecho)
+
             }
             if(plan[`sesion ${i + 1}`].espalda){
                 plan[`sesion ${i + 1}`].ejercicios_espalda = []
@@ -560,8 +560,10 @@ const pantallaCreacion = async() =>{
                   pointer_espalda++
                 }
                 plan[`sesion ${i + 1}`].ejercicios_espalda = plan[`sesion ${i + 1}`].ejercicios_espalda.map((e, k) => {
-                    return (((k + 1) * 3) <= plan[`sesion ${i + 1}`].espalda) ? {nombre : e, sets : 3, reps : 6} : {nombre : e, sets : (plan[`sesion ${i + 1}`].espalda % 3), reps : 6}   
+                    return (((k + 1) * 3) <= plan[`sesion ${i + 1}`].espalda) ? {ejercicio : e, sets : 3, reps : 6} : {ejercicio : e, sets : (plan[`sesion ${i + 1}`].espalda % 3), reps : 6}   
                 })
+                plan[`sesion ${i + 1}`].lista_ejercicios.push(...plan[`sesion ${i + 1}`].ejercicios_espalda)
+
             }
             if(plan[`sesion ${i + 1}`].piernas){
                 plan[`sesion ${i + 1}`].ejercicios_piernas = []
@@ -570,8 +572,10 @@ const pantallaCreacion = async() =>{
                   pointer_piernas++
                 }
                 plan[`sesion ${i + 1}`].ejercicios_piernas = plan[`sesion ${i + 1}`].ejercicios_piernas.map((e, k) => {
-                    return (((k + 1) * 3) <= plan[`sesion ${i + 1}`].piernas) ? {nombre : e, sets : 3, reps : 6} : {nombre : e, sets : (plan[`sesion ${i + 1}`].piernas % 3), reps : 6}   
+                    return (((k + 1) * 3) <= plan[`sesion ${i + 1}`].piernas) ? {ejercicio : e, sets : 3, reps : 6} : {ejercicio : e, sets : (plan[`sesion ${i + 1}`].piernas % 3), reps : 6}   
                 })
+                plan[`sesion ${i + 1}`].lista_ejercicios.push(...plan[`sesion ${i + 1}`].ejercicios_piernas)
+
             }
             if(plan[`sesion ${i + 1}`].hombros){
                 plan[`sesion ${i + 1}`].ejercicios_hombros = []
@@ -580,8 +584,10 @@ const pantallaCreacion = async() =>{
                   pointer_hombros++
                 }
                 plan[`sesion ${i + 1}`].ejercicios_hombros = plan[`sesion ${i + 1}`].ejercicios_hombros.map((e, k) => {
-                    return (((k + 1) * 3) <= plan[`sesion ${i + 1}`].hombros) ? {nombre : e, sets : 3, reps : 6} : {nombre : e, sets : (plan[`sesion ${i + 1}`].hombros % 3), reps : 6}   
+                    return (((k + 1) * 3) <= plan[`sesion ${i + 1}`].hombros) ? {ejercicio : e, sets : 3, reps : 6} : {ejercicio : e, sets : (plan[`sesion ${i + 1}`].hombros % 3), reps : 6}   
                 })
+                plan[`sesion ${i + 1}`].lista_ejercicios.push(...plan[`sesion ${i + 1}`].ejercicios_hombros)
+
             }
             if(plan[`sesion ${i + 1}`].biceps){
                 plan[`sesion ${i + 1}`].ejercicios_biceps = []
@@ -590,8 +596,10 @@ const pantallaCreacion = async() =>{
                   pointer_biceps++    
                 }
                 plan[`sesion ${i + 1}`].ejercicios_biceps = plan[`sesion ${i + 1}`].ejercicios_biceps.map((e, k) => {
-                    return (((k + 1) * 3) <= plan[`sesion ${i + 1}`].biceps) ? {nombre : e, sets : 3, reps : 6} : {nombre : e, sets : (plan[`sesion ${i + 1}`].biceps % 3), reps : 6}   
+                    return (((k + 1) * 3) <= plan[`sesion ${i + 1}`].biceps) ? {ejercicio : e, sets : 3, reps : 6} : {ejercicio : e, sets : (plan[`sesion ${i + 1}`].biceps % 3), reps : 6}   
                 })
+                plan[`sesion ${i + 1}`].lista_ejercicios.push(...plan[`sesion ${i + 1}`].ejercicios_biceps)
+
                 
                 
             }
@@ -602,9 +610,11 @@ const pantallaCreacion = async() =>{
                   pointer_triceps++
                 }
                 plan[`sesion ${i + 1}`].ejercicios_triceps = plan[`sesion ${i + 1}`].ejercicios_triceps.map((e, k) => {
-                    return (((k + 1) * 3) <= plan[`sesion ${i + 1}`].triceps) ? {nombre : e, sets : 3, reps : 6} : {nombre : e, sets : (plan[`sesion ${i + 1}`].triceps % 3), reps : 6} 
+                    return (((k + 1) * 3) <= plan[`sesion ${i + 1}`].triceps) ? {ejercicio : e, sets : 3, reps : 6} : {ejercicio : e, sets : (plan[`sesion ${i + 1}`].triceps % 3), reps : 6} 
                     
                 })
+                plan[`sesion ${i + 1}`].lista_ejercicios.push(...plan[`sesion ${i + 1}`].ejercicios_triceps)
+
             }
             if(plan[`sesion ${i + 1}`].antebrazos){
                 plan[`sesion ${i + 1}`].ejercicios_antebrazos = []
@@ -613,16 +623,111 @@ const pantallaCreacion = async() =>{
                   pointer_antebrazos++ 
                 }
                 plan[`sesion ${i + 1}`].ejercicios_antebrazos = plan[`sesion ${i + 1}`].ejercicios_antebrazos.map((e, k) => {
-                    return (((k + 1) * 3) <= plan[`sesion ${i + 1}`].antebrazos) ? {nombre : e, sets : 3, reps : 6} : {nombre : e, sets : (plan[`sesion ${i + 1}`].antebrazos % 3), reps : 6}   
+                    return (((k + 1) * 3) <= plan[`sesion ${i + 1}`].antebrazos) ? {ejercicio : e, sets : 3, reps : 6} : {ejercicio : e, sets : (plan[`sesion ${i + 1}`].antebrazos % 3), reps : 6}   
                 })
+                plan[`sesion ${i + 1}`].lista_ejercicios.push(...plan[`sesion ${i + 1}`].ejercicios_antebrazos)
+
                 
             }
         }        
         return plan
     }
 
+    const verEjercicios = (plan, sesion) => {
+        window.scrollTo(0, 0)
+        card.innerHTML = `<h1>Sesión ${sesion}- <span id="nombre">Ejercicios</span></h1>
+            <div class="container-padre" id="container-padre">
+                <div class="botones-izquierda">
+                    <div class="boton-ejercicio" id="izquierda" style="background-color: black;">
+                        <i class="fa-solid fa-arrow-left    fa-2xl" style="color: #ffffff;"></i>
+                    </div>
+                </div>
+                <div class="card card-ejercicio" id="card-ejercicio">
+                    <h1 id="nombre-ejercicio">Ejercicio</h1>
+                    <div class="item-container">
+                        <div class="icon-container">
+                            <img src="./Imagenes/FUERZA.png" alt="">
+                        </div>
+                        Pecho, Tríceps
+                    </div>
+                    <div class="item-container">
+                        <div class="icon-container">
+                            <i class="fa-solid fa-clipboard-question fa-xl" style="color: #0989ff;"></i>
+                        </div>
+                        6-12 repeticiones
+                    </div>
+                    <div class="item-container dumbbell" >
+                        <div class="icon-container">
+                            <i class="fa-solid fa-dumbbell fa-xl" id="dumbbell-icon"style="color: #0989ff;"></i>
+                        </div>
+                        3 sets
+                    </div>
+                    <div class="img-container">
+                        <img src="./Imagenes/PECHO.jpg" alt="">
+                    </div>
+                </div>
+                <div class="botones-derecha">
+                    <div class="boton-ejercicio" style="background-color: #0989ff; opacity: 1;">
+                        <i class="fa-solid fa-arrows-rotate fa-2xl" style="color: #ffffff;"></i>  
+                    </div>
+                    <div class="boton-ejercicio" id="derecha" style="background-color: black;">
+                        <i class="fa-solid fa-arrow-right fa-2xl" style="color: #ffffff;"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="botones-container" id="botones-modificar">
+                <button class="boton-volver" id="volver">
+                    Volver
+                </button>
+                <button class="boton-comenzar" id="comenzar">
+                    Comenzar
+                </button>
+            </div>
+        `
+        document.addEventListener("DOMContentLoaded", ()=>{
+            const container = document.getElementById("card_ejercicio")
+            const flecha_izquierda = document.getElementById("izquierda")
+            const flecha_derecha = document.getElementById("derecha")
+            let sesion_actual = 1
+
+
+            const cargarEjercicio = (n) =>{
+                let ejercicio = sesion.lista_ejercicios[0]
+                container.innerHTML = `
+                <h1 id="nombre-ejercicio">${ejercicio.nombre}</h1>
+                    <div class="item-container">
+                        <div class="icon-container">
+                            <img src="./Imagenes/FUERZA.png" alt="">
+                        </div>
+                        Pecho, Tríceps
+                    </div>
+                    <div class="item-container">
+                        <div class="icon-container">
+                            <i class="fa-solid fa-clipboard-question fa-xl" style="color: #0989ff;"></i>
+                        </div>
+                        6-12 repeticiones
+                    </div>
+                    <div class="item-container dumbbell" >
+                        <div class="icon-container">
+                            <i class="fa-solid fa-dumbbell fa-xl" id="dumbbell-icon"style="color: #0989ff;"></i>
+                        </div>
+                        3 sets
+                    </div>
+                    <div class="img-container">
+                        <img src="./Imagenes/PECHO.jpg" alt="">
+                    </div>
+                `
+            }
+
+            flecha_izquierda.addEventListener("click", ()=> {
+
+            })
+        })
+        
+    }
+
     const cargarSesiones = (plan) => {
-        const card = document.getElementById("card")
         const display_nombre = document.getElementById("nombre")
         display_nombre.innerText = plan.nombre
         if(sesiones < 4){
@@ -636,15 +741,21 @@ const pantallaCreacion = async() =>{
                         <div class="text-container">
                             <h1>Sesión ${i + 1}</h1>
                             <div class="item-container" id="clock">
-                                <i class="fa-regular fa-clock fa-xl" id="clock-icon"style="color: #0989ff;"></i>
+                                <div class="icon-container">
+                                    <i class="fa-regular fa-clock fa-xl" id="clock-icon"style="color: #0989ff;"></i>
+                                </div>
                                 ${plan.duracion} minutos
                             </div>
                             <div class="item-container ">
-                                <i class="fa-solid fa-clipboard-question fa-xl" style="color: #0989ff;"></i>
+                                <div class="icon-container">
+                                    <i class="fa-solid fa-clipboard-question fa-xl" style="color: #0989ff;"></i>
+                                </div>
                                 Full Body
                             </div>
                             <div class="item-container">
-                                <i class="fa-regular fa-clipboard fa-xl" style="color: #0989ff;"></i>
+                                <div class="icon-container">
+                                    <i class="fa-regular fa-clipboard fa-xl" style="color: #0989ff;"></i>
+                                </div>
                                 ${plan[`sesion ${i + 1}`].n_ejercicios} ejercicios
                             </div>
                         </div>
@@ -684,15 +795,21 @@ const pantallaCreacion = async() =>{
                     <div class="text-container">
                         <h1>Sesión ${i + 1}</h1>
                         <div class="item-container" id="clock">
+                            <div class="icon-container">
                             <i class="fa-regular fa-clock fa-xl" id="clock-icon"style="color: #0989ff;"></i>
+                            </div>
                             ${plan.duracion} minutos
                         </div>
                         <div class="item-container ">
+                            <div class="icon-container">
                             <i class="fa-solid fa-clipboard-question fa-xl" style="color: #0989ff;"></i>
+                            </div>
                             ${plan[`sesion ${i + 1}`].nombre}
                         </div>
                         <div class="item-container">
+                            <div class="icon-container">
                             <i class="fa-regular fa-clipboard fa-xl" style="color: #0989ff;"></i>
+                            </div>
                             ${plan[`sesion ${i + 1}`].n_ejercicios} sets
                         </div>
                     </div>
@@ -724,7 +841,31 @@ const pantallaCreacion = async() =>{
         for(let i = 1; (i - 1) <= sesiones; i++){
             if(i > sesiones){
                 setTimeout(() => {
-                    document.getElementById("botonera").style.animation = "fade-down 1s forwards"
+                    document.getElementById("botonera").style.animation = "fade-down 1s forwards 0.5s"
+                    lista_container.forEach((e, i)=>{
+                        e.addEventListener("mouseover", () => {
+                            lista_container_editar[i].style.animation = "fade-up 0.5s forwards"
+                            lista_container_editar[i].style.display = "flex"
+                            lista_container_editar[i].addEventListener("click", ()=>{
+                                verEjercicios(plan, (i + 1))
+                            })
+              
+                        })
+                        e.addEventListener("mouseleave", () => {
+                            lista_container_editar[i].style.animation = "fade-out 1s forwards"
+                            setTimeout(() => {
+                                lista_container_editar[i].style.display = "none"
+                            }, 1000)
+                        })
+                    })
+                    lista_container_editar.forEach((e, i) => {
+                        e.addEventListener("mouseover" , () => {
+                            lista_editar[i].style.transform = "scale(1.1)"
+                        })
+                        e.addEventListener("mouseleave", () => {
+                            lista_editar[i].style.transform = "scale(1)"
+                        })
+                    })
                 }, i * 1500)
             }else{
                 container = document.getElementById(`sesion-container-${i}`)
@@ -734,7 +875,7 @@ const pantallaCreacion = async() =>{
                 lista_container_editar.push(editar_container)
                 lista_editar.push(editar)
                 setTimeout(() => {
-                    lista_container[i - 1].style.animation = "fade-down 1s forwards"
+                    lista_container[i - 1].style.animation = "fade-down 1s forwards 0.5s"
                 }, i * 1500) 
             }
         }
@@ -748,34 +889,14 @@ const pantallaCreacion = async() =>{
         setTimeout(() =>{autoScroll(plan.sesiones)}, 2000)
        
 
-        setTimeout(()=>{
-            lista_container.forEach((e, i)=>{
-                e.addEventListener("mouseover", () => {
-                    lista_container_editar[i].style.animation = "fade-up 0.5s forwards"
-                    lista_container_editar[i].style.display = "flex"              
-      
-                })
-                e.addEventListener("mouseleave", () => {
-                    lista_container_editar[i].style.animation = "fade-out 1s forwards"
-                    setTimeout(() => {
-                        lista_container_editar[i].style.display = "none"
-                    }, 1000)
-                })
-            })
-            lista_container_editar.forEach((e, i) => {
-                e.addEventListener("mouseover" , () => {
-                    lista_editar[i].style.transform = "scale(1.1)"
-                })
-                e.addEventListener("mouseleave", () => {
-                    lista_editar[i].style.transform = "scale(1)"
-                })
-            })
-        }, 2000 + sesiones * 1500) 
+
     }
 
 
-    const plan = await crearPlan()
+    const plan = crearPlan()
     console.log(plan)
+    document.getElementById("usuario").innerText = userdata.nombre
+    cargarSesiones(plan)
     
 
     
