@@ -2,18 +2,18 @@ import { initializeApp } from "firebase/app"
 import { linkWithRedirect } from "firebase/auth"
 import { addDoc, collection, getDoc, getDocs, doc, getFirestore, query, where } from "firebase/firestore"
 
-const firebaseConfig = {
-    apiKey: "AIzaSyDFhZxCT21s5aJXfZlSuV0cEJrM9xGQ72A",
-    authDomain: "fierro-app.firebaseapp.com",
-    projectId: "fierro-app",
-    storageBucket: "fierro-app.appspot.com",
-    messagingSenderId: "805835831252",
-    appId: "1:805835831252:web:959f12a510a79d5412c841",
-    measurementId: "G-RBVQ4W3Q5D"
-}
+    const firebaseConfig = {
+        apiKey: "AIzaSyDFhZxCT21s5aJXfZlSuV0cEJrM9xGQ72A",
+        authDomain: "fierro-app.firebaseapp.com",
+        projectId: "fierro-app",
+        storageBucket: "fierro-app.appspot.com",
+        messagingSenderId: "805835831252",
+        appId: "1:805835831252:web:959f12a510a79d5412c841",
+        measurementId: "G-RBVQ4W3Q5D"
+    }
 
-const app = initializeApp(firebaseConfig)
-const db = getFirestore(app)
+    const app = initializeApp(firebaseConfig)
+    const db = getFirestore(app)
 
 const pantallaLogin = () => {
     const boton_ingresar = document.getElementById("ingresar")
@@ -304,73 +304,74 @@ const pantallaNuevo = () => {
 const pantallaCreacion = async() =>{
 
     const ejerciciosPecho = [
-        {nombre: "Press de Banca", imagen: "PRESS-BANCA.jpg"},
-        {nombre: "Press de Banca Inclinado", imagen: "PRESS-INCLINADO.jpeg"},
-        {nombre: "Fondos de Pecho", imagen: "CHEST-DIPS.jpg"},
-        {nombre: "Press de Banca Declinado", imagen: "PRESS-DECLINADO.jpg"},
-        {nombre: "Aperturas de Pecho con Mancuernas", imagen: "APERTURA-MANCUERNAS.jpg"},
-        {nombre: "Cruces de Poleas para Pecho", imagen: "CRUCE-POLEA.jpg"},
-        {nombre: "Press de Banca con Mancuernas", imagen: "PRESS-MANCUERNAS.jpg"},
-        {nombre: "Pull-over", imagen: "PULLOVER.jpg"}
-    ]
-
+        {nombre: "Press de Banca", imagen: "PRESS-BANCA.jpg", musculosTrabajados: "Pecho, Tríceps"},
+        {nombre: "Press de Banca Inclinado", imagen: "PRESS-INCLINADO.jpeg", musculosTrabajados: "Pecho, Tríceps"},
+        {nombre: "Fondos de Pecho", imagen: "CHEST-DIPS.jpg", musculosTrabajados: "Pecho, Tríceps, Hombros"},
+        {nombre: "Press de Banca Declinado", imagen: "PRESS-DECLINADO.jpg", musculosTrabajados: "Pecho, Tríceps"},
+        {nombre: "Aperturas de Pecho con Mancuernas", imagen: "APERTURA-MANCUERNAS.jpg", musculosTrabajados: "Pecho, Hombros"},
+        {nombre: "Cruces de Poleas para Pecho", imagen: "CRUCE-POLEA.jpg", musculosTrabajados: "Pecho"},
+        {nombre: "Press de Banca con Mancuernas", imagen: "PRESS-MANCUERNAS.jpg", musculosTrabajados: "Pecho, Tríceps"},
+        {nombre: "Pull-over", imagen: "PULLOVER.jpg", musculosTrabajados: "Pecho, Dorsales"}
+    ];
+    
     const ejerciciosEspalda = [
-        { nombre: "Dominada Abierta", imagen: "DOMINADA-ABIERTA.jpeg" },
-        { nombre: "Dominada Cerrada", imagen: "DOMINADA-CERRADA.jpg" },
-        { nombre: "Remo con Barra", imagen: "REMO-BARRA.jpg" },
-        { nombre: "Remo con Mancuerna", imagen: "REMO-MANCUERNAS.jpg" },
-        { nombre: "Peso Muerto", imagen: "PESO-MUERTO.jpg" },
-        { nombre: "Pulldowns al Pecho", imagen: "PULLDOWN-PECHO.jpg" },
-        { nombre: "Remo con Cable", imagen: "REMO-CABLE.jpg" },
-        { nombre: "Hiperextensiones", imagen: "HIPEREXTENSIONES.jpg" }
-    ]
+        { nombre: "Dominada Abierta", imagen: "DOMINADA-ABIERTA.jpeg", musculosTrabajados: "Dorsales, Bíceps"},
+        { nombre: "Dominada Cerrada", imagen: "DOMINADA-CERRADA.jpg", musculosTrabajados: "Dorsales, Bíceps"},
+        { nombre: "Remo con Barra", imagen: "REMO-BARRA.jpg", musculosTrabajados: "Espalda Alta, Dorsales"},
+        { nombre: "Remo con Mancuerna", imagen: "REMO-MANCUERNAS.jpg", musculosTrabajados: "Espalda Alta, Dorsales"},
+        { nombre: "Peso Muerto", imagen: "PESO-MUERTO.jpg", musculosTrabajados: "Espalda Baja, Glúteos, Isquiotibiales"},
+        { nombre: "Pulldowns al Pecho", imagen: "PULLDOWN-PECHO.jpg", musculosTrabajados: "Dorsales, Bíceps"},
+        { nombre: "Remo con Cable", imagen: "REMO-CABLE.jpg", musculosTrabajados: "Espalda Alta, Dorsales"},
+        { nombre: "Hiperextensiones", imagen: "HIPEREXTENSIONES.jpg", musculosTrabajados: "Espalda Baja, Glúteos"}
+    ];
     
     const ejerciciosBiceps = [
-        { nombre: "Curl de Bíceps con Barra", imagen: "BICEPS-BARRA.jpg" },
-        { nombre: "Curl de Bíceps con Mancuernas", imagen: "BICEPS-MANCUERNAS.jpg" },
-        { nombre: "Curl de Bíceps con Cable", imagen: "BICEPS-CABLE.jpg" },
-        { nombre: "Martillo de Bíceps", imagen: "BICEPS-MARTILLO.jpg" },
-        { nombre: "Curl de Concentración", imagen: "BICEP-CONCENTRADO.jpg" },
-        { nombre: "Curl de Bíceps Inclinado", imagen: "BICEPS-INCLINADO.jpeg" },
-        { nombre: "Curl de Bíceps en Banco Scott", imagen: "BICEPS-SCOTT.jpg" },
-        { nombre: "Chin-ups (Dominadas Supinas)", imagen: "CHIN-UPS.jpg" }
-    ]
+        { nombre: "Curl de Bíceps con Barra", imagen: "BICEPS-BARRA.jpg", musculosTrabajados: "Bíceps"},
+        { nombre: "Curl de Bíceps con Mancuernas", imagen: "BICEPS-MANCUERNAS.jpg", musculosTrabajados: "Bíceps"},
+        { nombre: "Curl de Bíceps con Cable", imagen: "BICEPS-CABLE.jpg", musculosTrabajados: "Bíceps"},
+        { nombre: "Martillo de Bíceps", imagen: "BICEPS-MARTILLO.jpg", musculosTrabajados: "Bíceps, Braquiorradial"},
+        { nombre: "Curl de Concentración", imagen: "BICEP-CONCENTRADO.jpg", musculosTrabajados: "Bíceps"},
+        { nombre: "Curl de Bíceps Inclinado", imagen: "BICEPS-INCLINADO.jpeg", musculosTrabajados: "Bíceps"},
+        { nombre: "Curl de Bíceps en Banco Scott", imagen: "BICEPS-SCOTT.jpg", musculosTrabajados: "Bíceps"},
+        { nombre: "Chin-ups (Dominadas Supinas)", imagen: "CHIN-UPS.jpg", musculosTrabajados: "Bíceps, Dorsales"}
+    ];
     
     const ejerciciosTriceps = [
-        { nombre: "Press Francés", imagen: "TRICEP-FRANCES.jpeg" },
-        { nombre: "Extensiones de Tríceps en Polea Alta", imagen: "TRICEP-POLEA.jpg" },
-        { nombre: "Extensiones de Tríceps con Soga", imagen: "TRICEP-SOGA.jpg" },
-        { nombre: "Fondos de Tríceps", imagen: "TRICEP-DIPS.jpg" },
-        { nombre: "Patada de Tríceps", imagen: "TRICEP-PATADA.jpg" },
-        { nombre: "Press de Tríceps con Mancuernas", imagen: "TRICEP-PRESS.jpg" }
-    ]
+        { nombre: "Press Francés", imagen: "TRICEP-FRANCES.jpeg", musculosTrabajados: "Tríceps"},
+        { nombre: "Extensiones de Tríceps en Polea Alta", imagen: "TRICEP-POLEA.jpg", musculosTrabajados: "Tríceps"},
+        { nombre: "Extensiones de Tríceps con Soga", imagen: "TRICEP-SOGA.jpg", musculosTrabajados: "Tríceps"},
+        { nombre: "Fondos de Tríceps", imagen: "TRICEP-DIPS.jpg", musculosTrabajados: "Tríceps, Pecho"},
+        { nombre: "Patada de Tríceps", imagen: "TRICEP-PATADA.jpg", musculosTrabajados: "Tríceps"},
+        { nombre: "Press de Tríceps con Mancuernas", imagen: "TRICEP-PRESS.jpg", musculosTrabajados: "Tríceps"}
+    ];
     
     const ejerciciosPiernas = [
-        { nombre: "Sentadillas (Squats)", imagen: "SENTADILLA.jpeg" },
-        { nombre: "Peso Muerto", imagen: "PESO-MUERTO.jpg" },
-        { nombre: "Zancadas (Lunges)", imagen: "ZANCADAS.jpg" },
-        { nombre: "Prensa de Piernas", imagen: "LEG-PRESS.jpg" },
-        { nombre: "Extensiones de Piernas", imagen: "LEG-EXTENSIONS.jpg" },
-        { nombre: "Calf Raises (Elevaciones de Talones)", imagen: "CALF-RAISES.jpg" },
-        { nombre: "Sentadillas Búlgaras", imagen: "SENTADILLA-BULGARA.jpeg" },
-        { nombre: "Hip Thrusts", imagen: "HIP-THRUSTS.jpg" },
-        { nombre: "Buenos Días", imagen: "GOOD-MORNINGS..jpg" }
-    ]
+        { nombre: "Sentadillas (Squats)", imagen: "SENTADILLA.jpeg", musculosTrabajados: "Cuádriceps, Glúteos, Isquiotibiales"},
+        { nombre: "Peso Muerto", imagen: "PESO-MUERTO.jpg", musculosTrabajados: "Espalda Baja, Glúteos, Isquiotibiales"},
+        { nombre: "Zancadas (Lunges)", imagen: "ZANCADAS.jpg", musculosTrabajados: "Cuádriceps, Glúteos"},
+        { nombre: "Prensa de Piernas", imagen: "LEG-PRESS.jpg", musculosTrabajados: "Cuádriceps, Glúteos"},
+        { nombre: "Extensiones de Piernas", imagen: "LEG-EXTENSIONS.jpg", musculosTrabajados: "Cuádriceps"},
+        { nombre: "Calf Raises (Elevaciones de Talones)", imagen: "CALF-RAISES.jpg", musculosTrabajados: "Gemelos"},
+        { nombre: "Sentadillas Búlgaras", imagen: "SENTADILLA-BULGARA.jpeg", musculosTrabajados: "Cuádriceps, Glúteos"},
+        { nombre: "Hip Thrusts", imagen: "HIP-THRUSTS.jpg", musculosTrabajados: "Glúteos, Isquiotibiales"},
+        { nombre: "Buenos Días", imagen: "GOOD-MORNINGS..jpg", musculosTrabajados: "Espalda Baja, Isquiotibiales"}
+    ];
     
     const ejerciciosHombros = [
-        { nombre: "Press Militar", imagen: "PRESS-MILITAR.jpg" },
-        { nombre: "Vuelos Laterales", imagen: "VUELO-LATERAL.jpg" },
-        { nombre: "Vuelos Posteriores", imagen: "VUELO-POSTERIOR.jpeg" },
-        { nombre: "Press Arnold", imagen: "PRESS-ARNOLD.jpeg" },
-        { nombre: "Jalones a la Cara (Face Pulls)", imagen: "FACE-PULLS.jpg" },
-        { nombre: "Remo al Mentón (Upright Rows)", imagen: "REMO-MENTON" }
-    ]
+        { nombre: "Press Militar", imagen: "PRESS-MILITAR.jpg", musculosTrabajados: "Hombros, Tríceps"},
+        { nombre: "Vuelos Laterales", imagen: "VUELO-LATERAL.jpg", musculosTrabajados: "Hombros"},
+        { nombre: "Vuelos Posteriores", imagen: "VUELO-POSTERIOR.jpeg", musculosTrabajados: "Hombros, Espalda Alta"},
+        { nombre: "Press Arnold", imagen: "PRESS-ARNOLD.jpeg", musculosTrabajados: "Hombros, Tríceps"},
+        { nombre: "Jalones a la Cara (Face Pulls)", imagen: "FACE-PULLS.jpg", musculosTrabajados: "Hombros, Espalda Alta"},
+        { nombre: "Remo al Mentón (Upright Rows)", imagen: "REMO-MENTON", musculosTrabajados: "Hombros, Trapecio"}
+    ];
     
     const ejerciciosAntebrazos = [
-        { nombre: "Curl de Muñeca con Mancuernas", imagen: "MUÑECA-CURL.jpg" },
-        { nombre: "Curl de Muñeca Inverso con Mancuernas", imagen: "CURL-MUÑECA-INVERTIDO.jpg" },
-        { nombre: "Rotaciones de Muñeca con Mancuernas", imagen: "MUÑECAS-ROTACION.jpg" }
-    ]
+        { nombre: "Curl de Muñeca con Mancuernas", imagen: "MUÑECA-CURL.jpg", musculosTrabajados: "Antebrazos"},
+        { nombre: "Curl de Muñeca Inverso con Mancuernas", imagen: "CURL-MUÑECA-INVERTIDO.jpg", musculosTrabajados: "Antebrazos"},
+        { nombre: "Rotaciones de Muñeca con Mancuernas", imagen: "MUÑECAS-ROTACION.jpg", musculosTrabajados: "Antebrazos"}
+    ];
+    
     
     const userdata = JSON.parse(localStorage.getItem("userdata"))
     const sesiones = parseInt(userdata.sesiones)
@@ -556,7 +557,7 @@ const pantallaCreacion = async() =>{
             if(plan[`sesion ${i + 1}`].espalda){
                 plan[`sesion ${i + 1}`].ejercicios_espalda = []
                 for(let j = 0; j < plan[`sesion ${i + 1}`].espalda; j+=3){
-                  plan[`sesion ${i + 1}`].ejercicios_espalda.push(ejerciciosPecho[(pointer_espalda % ejerciciosEspalda.length)])    
+                  plan[`sesion ${i + 1}`].ejercicios_espalda.push(ejerciciosEspalda[(pointer_espalda % ejerciciosEspalda.length)])    
                   pointer_espalda++
                 }
                 plan[`sesion ${i + 1}`].ejercicios_espalda = plan[`sesion ${i + 1}`].ejercicios_espalda.map((e, k) => {
@@ -629,6 +630,7 @@ const pantallaCreacion = async() =>{
 
                 
             }
+            plan[`sesion ${i + 1}`].lista_ejercicios.sort((a, b) => b.sets - a.sets)
         }        
         return plan
     }
@@ -643,28 +645,6 @@ const pantallaCreacion = async() =>{
                     </div>
                 </div>
                 <div class="card card-ejercicio" id="card-ejercicio">
-                    <h1 id="nombre-ejercicio">Ejercicio</h1>
-                    <div class="item-container">
-                        <div class="icon-container">
-                            <img src="./Imagenes/FUERZA.png" alt="">
-                        </div>
-                        Pecho, Tríceps
-                    </div>
-                    <div class="item-container">
-                        <div class="icon-container">
-                            <i class="fa-solid fa-clipboard-question fa-xl" style="color: #0989ff;"></i>
-                        </div>
-                        6-12 repeticiones
-                    </div>
-                    <div class="item-container dumbbell" >
-                        <div class="icon-container">
-                            <i class="fa-solid fa-dumbbell fa-xl" id="dumbbell-icon"style="color: #0989ff;"></i>
-                        </div>
-                        3 sets
-                    </div>
-                    <div class="img-container">
-                        <img src="./Imagenes/PECHO.jpg" alt="">
-                    </div>
                 </div>
                 <div class="botones-derecha">
                     <div class="boton-ejercicio" style="background-color: #0989ff; opacity: 1;">
@@ -685,45 +665,57 @@ const pantallaCreacion = async() =>{
                 </button>
             </div>
         `
-        document.addEventListener("DOMContentLoaded", ()=>{
-            const container = document.getElementById("card_ejercicio")
-            const flecha_izquierda = document.getElementById("izquierda")
-            const flecha_derecha = document.getElementById("derecha")
-            let sesion_actual = 1
+        const container = document.getElementById("card-ejercicio")
+        const flecha_izquierda = document.getElementById("izquierda")
+        const flecha_derecha = document.getElementById("derecha")
+        let ejercicio_actual = 0
 
+        const cargarEjercicio = (n) =>{
+            const length = plan[`sesion ${sesion}`].lista_ejercicios.length
+            let i = (n < 0) ? Math.abs(length - Math.abs(n)) % length : n % length
+            let item = plan[`sesion ${sesion}`].lista_ejercicios[(i)]
+            let ejercicio = item.ejercicio
+            container.innerHTML = `
+            <h1 id="nombre-ejercicio">${ejercicio.nombre}</h1>
+                <div class="item-container">
+                    <div class="icon-container">
+                        <img src="./Imagenes/FUERZA.png" alt="">
+                    </div>
+                    ${ejercicio.musculosTrabajados}
+                </div>
+                <div class="item-container">
+                    <div class="icon-container">
+                        <i class="fa-solid fa-clipboard-question fa-xl" style="color: #0989ff;"></i>
+                    </div>
+                    ${item.reps} repeticiones
+                </div>
+                <div class="item-container dumbbell" >
+                    <div class="icon-container">
+                        <i class="fa-solid fa-dumbbell fa-xl" id="dumbbell-icon"style="color: #0989ff;"></i>
+                    </div>
+                    ${(item.sets > 1) ? `${item.sets} sets` : `${item.sets} set`} 
+                </div>
+                <div class="img-container">
+                    <img src="./Imagenes/${ejercicio.imagen}" alt="">
+                </div>
+            `
+        }
 
-            const cargarEjercicio = (n) =>{
-                let ejercicio = sesion.lista_ejercicios[0]
-                container.innerHTML = `
-                <h1 id="nombre-ejercicio">${ejercicio.nombre}</h1>
-                    <div class="item-container">
-                        <div class="icon-container">
-                            <img src="./Imagenes/FUERZA.png" alt="">
-                        </div>
-                        Pecho, Tríceps
-                    </div>
-                    <div class="item-container">
-                        <div class="icon-container">
-                            <i class="fa-solid fa-clipboard-question fa-xl" style="color: #0989ff;"></i>
-                        </div>
-                        6-12 repeticiones
-                    </div>
-                    <div class="item-container dumbbell" >
-                        <div class="icon-container">
-                            <i class="fa-solid fa-dumbbell fa-xl" id="dumbbell-icon"style="color: #0989ff;"></i>
-                        </div>
-                        3 sets
-                    </div>
-                    <div class="img-container">
-                        <img src="./Imagenes/PECHO.jpg" alt="">
-                    </div>
-                `
-            }
-
-            flecha_izquierda.addEventListener("click", ()=> {
-
-            })
+        flecha_derecha.addEventListener("click", ()=> {
+            console.log("skiribibob")
+            ejercicio_actual++
+            cargarEjercicio(ejercicio_actual)
         })
+
+        flecha_izquierda.addEventListener("click", ()=> {
+            console.log("skiribibob")
+            ejercicio_actual--
+            cargarEjercicio(ejercicio_actual)
+        })
+
+        
+
+        cargarEjercicio(ejercicio_actual)
         
     }
 
